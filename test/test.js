@@ -1,5 +1,9 @@
-import chai from 'chai';
-const should = chai.should();
+import * as chai from 'chai';
+const should = ((
+   typeof process === 'object' && 
+   typeof process.versions === 'object' && 
+   typeof process.versions.node !== 'undefined'
+)?chai:window.chai).should();
 import { Emitter } from '../extended-emitter-es6.js';
 
 describe('Extended Emitter can', function(){
